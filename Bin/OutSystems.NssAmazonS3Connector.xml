@@ -1,0 +1,741 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OutSystems.NssAmazonS3Connector</name>
+    </assembly>
+    <members>
+        <member name="M:OutSystems.NssAmazonS3Connector.CssAmazonS3Connector.MssS3_Login(OutSystems.NssAmazonS3Connector.RCS3_AuthenticationInfoRecord)">
+            <summary>
+            Initiates the AmazonS3Client
+            </summary>
+            <param name="ssAuthenticationInfo"></param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.CssAmazonS3Connector.MssS3_ListObjects(System.String,System.String,System.String,System.Int32,System.String@,OutSystems.NssAmazonS3Connector.RLS3_ObjectRecordList@)">
+            <summary>
+            Returns some or all (up to 1000) of the objects in a bucket. You can use the request parameters as selection criteria to return a subset of the objects in a bucket.
+            </summary>
+            <param name="ssBucketName"></param>
+            <param name="ssPrefix"></param>
+            <param name="ssMarker"></param>
+            <param name="ssMaxKeys"></param>
+            <param name="ssNextMarker"></param>
+            <param name="ssObjects"></param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.CssAmazonS3Connector.MssS3_PutObject(System.String,System.String,System.Byte[],OutSystems.NssAmazonS3Connector.RLS3_MetadataRecordList,OutSystems.NssAmazonS3Connector.RLS3_TagRecordList,System.String)">
+            <summary>
+            Adds an object to a bucket
+            </summary>
+            <param name="ssBucketName"></param>
+            <param name="ssKey"></param>
+            <param name="ssData"></param>
+            <param name="ssMetadata"></param>
+            <param name="ssCannedACL"></param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.CssAmazonS3Connector.MssS3_GetPreSignedUrl(System.Boolean,System.String,System.String,System.Decimal,System.String,System.String@)">
+            <summary>
+            Create a signed URL allowing access to a resource that would usually require authentication. 
+            </summary>
+            <param name="ssUseHttps"></param>
+            <param name="ssBucketName"></param>
+            <param name="ssKey"></param>
+            <param name="ssExpiresIn"></param>
+            <param name="ssUrl"></param>
+            <param name="ssVerb"></param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.CssAmazonS3Connector.MssS3_PutBucket(System.String)">
+            <summary>
+            Creates a new bucket
+            </summary>
+            <param name="ssBucketName"></param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.CssAmazonS3Connector.MssS3_DeleteBucket(System.String)">
+            <summary>
+            Deletes the bucket. All objects (including all object versions and Delete Markers) in the bucket must be deleted before the bucket itself can be deleted. 
+            </summary>
+            <param name="ssBucketName"></param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.CssAmazonS3Connector.MssS3_DeleteObject(System.String,System.String)">
+            <summary>
+            Removes the null version (if there is one) of an object and inserts a delete marker, which becomes the latest version of the object. If there isn't a null version, Amazon S3 does not remove any objects. 
+            </summary>
+            <param name="ssBucketName"></param>
+            <param name="ssKey"></param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.CssAmazonS3Connector.MssS3_DeleteObjects(System.String,OutSystems.NssAmazonS3Connector.RLS3_KeyRecordList,OutSystems.NssAmazonS3Connector.RLS3_DeleteErrorRecordList@)">
+            <summary>
+            This operation enables you to delete multiple objects from a bucket using a single HTTP request. If you know the object keys that you want to delete, then this operation provides a suitable alternative to sending individual delete requests, reducing per-request overhead.
+            
+            The request contains a list of up to 1000 keys that you want to delete
+            </summary>
+            <param name="ssBucketName"></param>
+            <param name="ssKeys"></param>
+            <param name="ssErrors"></param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.CssAmazonS3Connector.MssS3_GetObject(System.String,System.String,System.Byte[]@)">
+            <summary>
+            Retrieves objects from Amazon S3
+            </summary>
+            <param name="ssBucketName"></param>
+            <param name="ssKey"></param>
+            <param name="ssData"></param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.CssAmazonS3Connector.MssS3_CopyObject(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Creates a copy of an object that is already stored in Amazon S3.
+            </summary>
+            <param name="ssSourceBucket"></param>
+            <param name="ssSourceKey"></param>
+            <param name="ssSourceVersionId"></param>
+            <param name="ssDestinationBucket"></param>
+            <param name="ssDestinationKey"></param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.CssAmazonS3Connector.MssS3_GetObjectTags(System.String,System.String,System.String,OutSystems.NssAmazonS3Connector.RLS3_TagRecordList@)">
+            <summary>
+            Returns the tag-set of an object. You send the GET request against the tagging subresource associated with the object.
+            
+            To use this operation, you must have permission to perform the s3:GetObjectTagging action. By default, the GET action returns information about current version of an object. For a versioned bucket, you can have multiple versions of an object in your bucket. To retrieve tags of any other version, use the versionId query parameter. You also need permission for the s3:GetObjectVersionTagging action.
+            </summary>
+            <param name="ssBucketName"></param>
+            <param name="ssKey"></param>
+            <param name="ssVersionId"></param>
+            <param name="ssTagSet"></param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.CssAmazonS3Connector.MssS3_DeleteObjectTags(System.String,System.String,System.String)">
+            <summary>
+             Removes the entire tag set from the specified object. For more information about managing object tags, see Object Tagging.
+            
+            To use this operation, you must have permission to perform the s3:DeleteObjectTagging action.
+            
+            To delete tags of a specific object version, add the versionId query parameter in the request. You will need permission for the s3:DeleteObjectVersionTagging action.
+            </summary>
+            <param name="ssBucketName"></param>
+            <param name="ssKey"></param>
+            <param name="ssVersionId"></param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.IssAmazonS3Connector.MssS3_ListObjects(System.String,System.String,System.String,System.Int32,System.String@,OutSystems.NssAmazonS3Connector.RLS3_ObjectRecordList@)">
+            <summary>
+            Returns some or all (up to 1000) of the objects in a bucket. You can use the request parameters as selection criteria to return a subset of the objects in a bucket.
+            </summary>
+            <param name="ssBucketName"></param>
+            <param name="ssPrefix"></param>
+            <param name="ssMarker"></param>
+            <param name="ssMaxKeys"></param>
+            <param name="ssNextMarker">When more objects meet the criteria this returns the next marker to be used to continue the search</param>
+            <param name="ssObjects"></param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.IssAmazonS3Connector.MssS3_PutObject(System.String,System.String,System.Byte[],OutSystems.NssAmazonS3Connector.RLS3_MetadataRecordList,OutSystems.NssAmazonS3Connector.RLS3_TagRecordList,System.String)">
+            <summary>
+            Adds an object to a bucket
+            </summary>
+            <param name="ssBucketName"></param>
+            <param name="ssKey"></param>
+            <param name="ssData"></param>
+            <param name="ssMetadata"></param>
+            <param name="ssTagSet"></param>
+            <param name="ssCannedACL"></param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.IssAmazonS3Connector.MssS3_GetPreSignedUrl(System.Boolean,System.String,System.String,System.Decimal,System.String,System.String@)">
+            <summary>
+            Create a signed URL allowing access to a resource that would usually require authentication.
+            </summary>
+            <param name="ssUseHttps"></param>
+            <param name="ssBucketName"></param>
+            <param name="ssKey"></param>
+            <param name="ssExpiresIn"></param>
+            <param name="ssVerb"></param>
+            <param name="ssUrl"></param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.IssAmazonS3Connector.MssS3_PutBucket(System.String)">
+            <summary>
+            Creates a new bucket
+            </summary>
+            <param name="ssBucketName"></param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.IssAmazonS3Connector.MssS3_DeleteBucket(System.String)">
+            <summary>
+            Deletes the bucket. All objects (including all object versions and Delete Markers) in the bucket must be deleted before the bucket itself can be deleted.
+            </summary>
+            <param name="ssBucketName"></param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.IssAmazonS3Connector.MssS3_DeleteObject(System.String,System.String)">
+            <summary>
+            Removes the null version (if there is one) of an object and inserts a delete marker, which becomes the latest version of the object. If there isn&apos;t a null version, Amazon S3 does not remove any objects.
+            </summary>
+            <param name="ssBucketName"></param>
+            <param name="ssKey"></param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.IssAmazonS3Connector.MssS3_GetObject(System.String,System.String,System.Byte[]@)">
+            <summary>
+            Retrieves objects from Amazon S3
+            </summary>
+            <param name="ssBucketName"></param>
+            <param name="ssKey"></param>
+            <param name="ssData"></param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.IssAmazonS3Connector.MssS3_Login(OutSystems.NssAmazonS3Connector.RCS3_AuthenticationInfoRecord)">
+            <summary>
+            Initiates the AmazonS3Client
+            </summary>
+            <param name="ssAuthenticationInfo"></param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.IssAmazonS3Connector.MssS3_DeleteObjects(System.String,OutSystems.NssAmazonS3Connector.RLS3_KeyRecordList,OutSystems.NssAmazonS3Connector.RLS3_DeleteErrorRecordList@)">
+            <summary>
+            This operation enables you to delete multiple objects from a bucket using a single HTTP request. If you know the object keys that you want to delete, then this operation provides a suitable alternative to sending individual delete requests, reducing per-request overhead.
+            
+            The request contains a list of up to 1000 keys that you want to delete
+            </summary>
+            <param name="ssBucketName"></param>
+            <param name="ssKeys"></param>
+            <param name="ssErrors"></param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.IssAmazonS3Connector.MssS3_CopyObject(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Creates a copy of an object that is already stored in Amazon S3.
+            </summary>
+            <param name="ssSourceBucket"></param>
+            <param name="ssSourceKey"></param>
+            <param name="ssSourceVersionId"></param>
+            <param name="ssDestinationBucket"></param>
+            <param name="ssDestinationKey"></param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.IssAmazonS3Connector.MssS3_GetObjectTags(System.String,System.String,System.String,OutSystems.NssAmazonS3Connector.RLS3_TagRecordList@)">
+            <summary>
+            Returns the tag-set of an object. You send the GET request against the tagging subresource associated with the object.
+            
+            To use this operation, you must have permission to perform the s3:GetObjectTagging action. By default, the GET action returns information about current version of an object. For a versioned bucket, you can have multiple versions of an object in your bucket. To retrieve tags of any other version, use the versionId query parameter. You also need permission for the s3:GetObjectVersionTagging action.
+            </summary>
+            <param name="ssBucketName"></param>
+            <param name="ssKey"></param>
+            <param name="ssVersionId"></param>
+            <param name="ssTagSet"></param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.IssAmazonS3Connector.MssS3_DeleteObjectTags(System.String,System.String,System.String)">
+            <summary>
+             Removes the entire tag set from the specified object. For more information about managing object tags, see Object Tagging.
+            
+            To use this operation, you must have permission to perform the s3:DeleteObjectTagging action.
+            
+            To delete tags of a specific object version, add the versionId query parameter in the request. You will need permission for the s3:DeleteObjectVersionTagging action.
+            </summary>
+            <param name="ssBucketName"></param>
+            <param name="ssKey"></param>
+            <param name="ssVersionId"></param>
+        </member>
+        <member name="T:OutSystems.NssAmazonS3Connector.RLS3_AuthenticationInfoRecordList">
+            <summary>
+            RecordList type <code>RLS3_AuthenticationInfoRecordList</code> that represents a record list of
+             <code>S3_AuthenticationInfo</code>
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RLS3_AuthenticationInfoRecordList.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RLS3_AuthenticationInfoRecordList.#ctor(System.Data.IDbTransaction)">
+            <summary>
+            Constructor with transaction parameter
+            </summary>
+            <param name="trans"> IDbTransaction Parameter</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RLS3_AuthenticationInfoRecordList.#ctor(System.Data.IDbTransaction,OutSystems.HubEdition.RuntimePlatform.Db.OSList{OutSystems.NssAmazonS3Connector.RCS3_AuthenticationInfoRecord}.ReadDBMethodDelegate)">
+            <summary>
+            Constructor with transaction parameter and alternate read method
+            </summary>
+            <param name="trans"> IDbTransaction Parameter</param>
+            <param name="alternateReadDBMethod"> Alternate Read Method</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RLS3_AuthenticationInfoRecordList.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor declaration for serialization
+            </summary>
+            <param name="info"> SerializationInfo</param>
+            <param name="context"> StreamingContext</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RLS3_AuthenticationInfoRecordList.NewList">
+            <summary>
+            Create as new list
+            </summary>
+            <returns>The new record list</returns>
+        </member>
+        <member name="T:OutSystems.NssAmazonS3Connector.RLS3_ObjectRecordList">
+            <summary>
+            RecordList type <code>RLS3_ObjectRecordList</code> that represents a record list of
+             <code>S3_Object</code>
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RLS3_ObjectRecordList.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RLS3_ObjectRecordList.#ctor(System.Data.IDbTransaction)">
+            <summary>
+            Constructor with transaction parameter
+            </summary>
+            <param name="trans"> IDbTransaction Parameter</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RLS3_ObjectRecordList.#ctor(System.Data.IDbTransaction,OutSystems.HubEdition.RuntimePlatform.Db.OSList{OutSystems.NssAmazonS3Connector.RCS3_ObjectRecord}.ReadDBMethodDelegate)">
+            <summary>
+            Constructor with transaction parameter and alternate read method
+            </summary>
+            <param name="trans"> IDbTransaction Parameter</param>
+            <param name="alternateReadDBMethod"> Alternate Read Method</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RLS3_ObjectRecordList.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor declaration for serialization
+            </summary>
+            <param name="info"> SerializationInfo</param>
+            <param name="context"> StreamingContext</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RLS3_ObjectRecordList.NewList">
+            <summary>
+            Create as new list
+            </summary>
+            <returns>The new record list</returns>
+        </member>
+        <member name="T:OutSystems.NssAmazonS3Connector.RLS3_MetadataRecordList">
+            <summary>
+            RecordList type <code>RLS3_MetadataRecordList</code> that represents a record list of
+             <code>S3_Metadata</code>
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RLS3_MetadataRecordList.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RLS3_MetadataRecordList.#ctor(System.Data.IDbTransaction)">
+            <summary>
+            Constructor with transaction parameter
+            </summary>
+            <param name="trans"> IDbTransaction Parameter</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RLS3_MetadataRecordList.#ctor(System.Data.IDbTransaction,OutSystems.HubEdition.RuntimePlatform.Db.OSList{OutSystems.NssAmazonS3Connector.RCS3_MetadataRecord}.ReadDBMethodDelegate)">
+            <summary>
+            Constructor with transaction parameter and alternate read method
+            </summary>
+            <param name="trans"> IDbTransaction Parameter</param>
+            <param name="alternateReadDBMethod"> Alternate Read Method</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RLS3_MetadataRecordList.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor declaration for serialization
+            </summary>
+            <param name="info"> SerializationInfo</param>
+            <param name="context"> StreamingContext</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RLS3_MetadataRecordList.NewList">
+            <summary>
+            Create as new list
+            </summary>
+            <returns>The new record list</returns>
+        </member>
+        <member name="T:OutSystems.NssAmazonS3Connector.RLS3_KeyRecordList">
+            <summary>
+            RecordList type <code>RLS3_KeyRecordList</code> that represents a record list of
+             <code>S3_Key</code>
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RLS3_KeyRecordList.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RLS3_KeyRecordList.#ctor(System.Data.IDbTransaction)">
+            <summary>
+            Constructor with transaction parameter
+            </summary>
+            <param name="trans"> IDbTransaction Parameter</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RLS3_KeyRecordList.#ctor(System.Data.IDbTransaction,OutSystems.HubEdition.RuntimePlatform.Db.OSList{OutSystems.NssAmazonS3Connector.RCS3_KeyRecord}.ReadDBMethodDelegate)">
+            <summary>
+            Constructor with transaction parameter and alternate read method
+            </summary>
+            <param name="trans"> IDbTransaction Parameter</param>
+            <param name="alternateReadDBMethod"> Alternate Read Method</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RLS3_KeyRecordList.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor declaration for serialization
+            </summary>
+            <param name="info"> SerializationInfo</param>
+            <param name="context"> StreamingContext</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RLS3_KeyRecordList.NewList">
+            <summary>
+            Create as new list
+            </summary>
+            <returns>The new record list</returns>
+        </member>
+        <member name="T:OutSystems.NssAmazonS3Connector.RLS3_DeleteErrorRecordList">
+            <summary>
+            RecordList type <code>RLS3_DeleteErrorRecordList</code> that represents a record list of
+             <code>S3_DeleteError</code>
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RLS3_DeleteErrorRecordList.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RLS3_DeleteErrorRecordList.#ctor(System.Data.IDbTransaction)">
+            <summary>
+            Constructor with transaction parameter
+            </summary>
+            <param name="trans"> IDbTransaction Parameter</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RLS3_DeleteErrorRecordList.#ctor(System.Data.IDbTransaction,OutSystems.HubEdition.RuntimePlatform.Db.OSList{OutSystems.NssAmazonS3Connector.RCS3_DeleteErrorRecord}.ReadDBMethodDelegate)">
+            <summary>
+            Constructor with transaction parameter and alternate read method
+            </summary>
+            <param name="trans"> IDbTransaction Parameter</param>
+            <param name="alternateReadDBMethod"> Alternate Read Method</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RLS3_DeleteErrorRecordList.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor declaration for serialization
+            </summary>
+            <param name="info"> SerializationInfo</param>
+            <param name="context"> StreamingContext</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RLS3_DeleteErrorRecordList.NewList">
+            <summary>
+            Create as new list
+            </summary>
+            <returns>The new record list</returns>
+        </member>
+        <member name="T:OutSystems.NssAmazonS3Connector.RLS3_TagRecordList">
+            <summary>
+            RecordList type <code>RLS3_TagRecordList</code> that represents a record list of
+             <code>S3_Tag</code>
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RLS3_TagRecordList.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RLS3_TagRecordList.#ctor(System.Data.IDbTransaction)">
+            <summary>
+            Constructor with transaction parameter
+            </summary>
+            <param name="trans"> IDbTransaction Parameter</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RLS3_TagRecordList.#ctor(System.Data.IDbTransaction,OutSystems.HubEdition.RuntimePlatform.Db.OSList{OutSystems.NssAmazonS3Connector.RCS3_TagRecord}.ReadDBMethodDelegate)">
+            <summary>
+            Constructor with transaction parameter and alternate read method
+            </summary>
+            <param name="trans"> IDbTransaction Parameter</param>
+            <param name="alternateReadDBMethod"> Alternate Read Method</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RLS3_TagRecordList.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor declaration for serialization
+            </summary>
+            <param name="info"> SerializationInfo</param>
+            <param name="context"> StreamingContext</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RLS3_TagRecordList.NewList">
+            <summary>
+            Create as new list
+            </summary>
+            <returns>The new record list</returns>
+        </member>
+        <member name="T:OutSystems.NssAmazonS3Connector.RCS3_AuthenticationInfoRecord">
+            <summary>
+            Structure <code>RCS3_AuthenticationInfoRecord</code>
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RCS3_AuthenticationInfoRecord.Read(System.Data.IDataReader,System.Int32@)">
+            <summary>
+            Read a record from database
+            </summary>
+            <param name="r"> Data base reader</param>
+            <param name="index"> index</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RCS3_AuthenticationInfoRecord.ReadDB(System.Data.IDataReader)">
+            <summary>
+            Read from database
+            </summary>
+            <param name="r"> Data reader</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RCS3_AuthenticationInfoRecord.ReadIM(OutSystems.NssAmazonS3Connector.RCS3_AuthenticationInfoRecord)">
+            <summary>
+            Read from record
+            </summary>
+            <param name="r"> Record</param>
+        </member>
+        <member name="T:OutSystems.NssAmazonS3Connector.RCS3_ObjectRecord">
+            <summary>
+            Structure <code>RCS3_ObjectRecord</code>
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RCS3_ObjectRecord.Read(System.Data.IDataReader,System.Int32@)">
+            <summary>
+            Read a record from database
+            </summary>
+            <param name="r"> Data base reader</param>
+            <param name="index"> index</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RCS3_ObjectRecord.ReadDB(System.Data.IDataReader)">
+            <summary>
+            Read from database
+            </summary>
+            <param name="r"> Data reader</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RCS3_ObjectRecord.ReadIM(OutSystems.NssAmazonS3Connector.RCS3_ObjectRecord)">
+            <summary>
+            Read from record
+            </summary>
+            <param name="r"> Record</param>
+        </member>
+        <member name="T:OutSystems.NssAmazonS3Connector.RCS3_MetadataRecord">
+            <summary>
+            Structure <code>RCS3_MetadataRecord</code>
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RCS3_MetadataRecord.Read(System.Data.IDataReader,System.Int32@)">
+            <summary>
+            Read a record from database
+            </summary>
+            <param name="r"> Data base reader</param>
+            <param name="index"> index</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RCS3_MetadataRecord.ReadDB(System.Data.IDataReader)">
+            <summary>
+            Read from database
+            </summary>
+            <param name="r"> Data reader</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RCS3_MetadataRecord.ReadIM(OutSystems.NssAmazonS3Connector.RCS3_MetadataRecord)">
+            <summary>
+            Read from record
+            </summary>
+            <param name="r"> Record</param>
+        </member>
+        <member name="T:OutSystems.NssAmazonS3Connector.RCS3_KeyRecord">
+            <summary>
+            Structure <code>RCS3_KeyRecord</code>
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RCS3_KeyRecord.Read(System.Data.IDataReader,System.Int32@)">
+            <summary>
+            Read a record from database
+            </summary>
+            <param name="r"> Data base reader</param>
+            <param name="index"> index</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RCS3_KeyRecord.ReadDB(System.Data.IDataReader)">
+            <summary>
+            Read from database
+            </summary>
+            <param name="r"> Data reader</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RCS3_KeyRecord.ReadIM(OutSystems.NssAmazonS3Connector.RCS3_KeyRecord)">
+            <summary>
+            Read from record
+            </summary>
+            <param name="r"> Record</param>
+        </member>
+        <member name="T:OutSystems.NssAmazonS3Connector.RCS3_DeleteErrorRecord">
+            <summary>
+            Structure <code>RCS3_DeleteErrorRecord</code>
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RCS3_DeleteErrorRecord.Read(System.Data.IDataReader,System.Int32@)">
+            <summary>
+            Read a record from database
+            </summary>
+            <param name="r"> Data base reader</param>
+            <param name="index"> index</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RCS3_DeleteErrorRecord.ReadDB(System.Data.IDataReader)">
+            <summary>
+            Read from database
+            </summary>
+            <param name="r"> Data reader</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RCS3_DeleteErrorRecord.ReadIM(OutSystems.NssAmazonS3Connector.RCS3_DeleteErrorRecord)">
+            <summary>
+            Read from record
+            </summary>
+            <param name="r"> Record</param>
+        </member>
+        <member name="T:OutSystems.NssAmazonS3Connector.RCS3_TagRecord">
+            <summary>
+            Structure <code>RCS3_TagRecord</code>
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RCS3_TagRecord.Read(System.Data.IDataReader,System.Int32@)">
+            <summary>
+            Read a record from database
+            </summary>
+            <param name="r"> Data base reader</param>
+            <param name="index"> index</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RCS3_TagRecord.ReadDB(System.Data.IDataReader)">
+            <summary>
+            Read from database
+            </summary>
+            <param name="r"> Data reader</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.RCS3_TagRecord.ReadIM(OutSystems.NssAmazonS3Connector.RCS3_TagRecord)">
+            <summary>
+            Read from record
+            </summary>
+            <param name="r"> Record</param>
+        </member>
+        <member name="T:OutSystems.NssAmazonS3Connector.STS3_AuthenticationInfoStructure">
+            <summary>
+            Structure <code>STS3_AuthenticationInfoStructure</code> that represents the Service Studio
+             structure <code>S3_AuthenticationInfo</code> <p> Description: </p>
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.STS3_AuthenticationInfoStructure.Read(System.Data.IDataReader,System.Int32@)">
+            <summary>
+            Read a record from database
+            </summary>
+            <param name="r"> Data base reader</param>
+            <param name="index"> index</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.STS3_AuthenticationInfoStructure.ReadDB(System.Data.IDataReader)">
+            <summary>
+            Read from database
+            </summary>
+            <param name="r"> Data reader</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.STS3_AuthenticationInfoStructure.ReadIM(OutSystems.NssAmazonS3Connector.STS3_AuthenticationInfoStructure)">
+            <summary>
+            Read from record
+            </summary>
+            <param name="r"> Record</param>
+        </member>
+        <member name="T:OutSystems.NssAmazonS3Connector.STS3_ObjectStructure">
+            <summary>
+            Structure <code>STS3_ObjectStructure</code> that represents the Service Studio structure
+             <code>S3_Object</code> <p> Description: </p>
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.STS3_ObjectStructure.Read(System.Data.IDataReader,System.Int32@)">
+            <summary>
+            Read a record from database
+            </summary>
+            <param name="r"> Data base reader</param>
+            <param name="index"> index</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.STS3_ObjectStructure.ReadDB(System.Data.IDataReader)">
+            <summary>
+            Read from database
+            </summary>
+            <param name="r"> Data reader</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.STS3_ObjectStructure.ReadIM(OutSystems.NssAmazonS3Connector.STS3_ObjectStructure)">
+            <summary>
+            Read from record
+            </summary>
+            <param name="r"> Record</param>
+        </member>
+        <member name="T:OutSystems.NssAmazonS3Connector.STS3_MetadataStructure">
+            <summary>
+            Structure <code>STS3_MetadataStructure</code> that represents the Service Studio structure
+             <code>S3_Metadata</code> <p> Description: </p>
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.STS3_MetadataStructure.Read(System.Data.IDataReader,System.Int32@)">
+            <summary>
+            Read a record from database
+            </summary>
+            <param name="r"> Data base reader</param>
+            <param name="index"> index</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.STS3_MetadataStructure.ReadDB(System.Data.IDataReader)">
+            <summary>
+            Read from database
+            </summary>
+            <param name="r"> Data reader</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.STS3_MetadataStructure.ReadIM(OutSystems.NssAmazonS3Connector.STS3_MetadataStructure)">
+            <summary>
+            Read from record
+            </summary>
+            <param name="r"> Record</param>
+        </member>
+        <member name="T:OutSystems.NssAmazonS3Connector.STS3_KeyStructure">
+            <summary>
+            Structure <code>STS3_KeyStructure</code> that represents the Service Studio structure
+             <code>S3_Key</code> <p> Description: </p>
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.STS3_KeyStructure.Read(System.Data.IDataReader,System.Int32@)">
+            <summary>
+            Read a record from database
+            </summary>
+            <param name="r"> Data base reader</param>
+            <param name="index"> index</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.STS3_KeyStructure.ReadDB(System.Data.IDataReader)">
+            <summary>
+            Read from database
+            </summary>
+            <param name="r"> Data reader</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.STS3_KeyStructure.ReadIM(OutSystems.NssAmazonS3Connector.STS3_KeyStructure)">
+            <summary>
+            Read from record
+            </summary>
+            <param name="r"> Record</param>
+        </member>
+        <member name="T:OutSystems.NssAmazonS3Connector.STS3_DeleteErrorStructure">
+            <summary>
+            Structure <code>STS3_DeleteErrorStructure</code> that represents the Service Studio structure
+             <code>S3_DeleteError</code> <p> Description: </p>
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.STS3_DeleteErrorStructure.Read(System.Data.IDataReader,System.Int32@)">
+            <summary>
+            Read a record from database
+            </summary>
+            <param name="r"> Data base reader</param>
+            <param name="index"> index</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.STS3_DeleteErrorStructure.ReadDB(System.Data.IDataReader)">
+            <summary>
+            Read from database
+            </summary>
+            <param name="r"> Data reader</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.STS3_DeleteErrorStructure.ReadIM(OutSystems.NssAmazonS3Connector.STS3_DeleteErrorStructure)">
+            <summary>
+            Read from record
+            </summary>
+            <param name="r"> Record</param>
+        </member>
+        <member name="T:OutSystems.NssAmazonS3Connector.STS3_TagStructure">
+            <summary>
+            Structure <code>STS3_TagStructure</code> that represents the Service Studio structure
+             <code>S3_Tag</code> <p> Description: </p>
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.STS3_TagStructure.Read(System.Data.IDataReader,System.Int32@)">
+            <summary>
+            Read a record from database
+            </summary>
+            <param name="r"> Data base reader</param>
+            <param name="index"> index</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.STS3_TagStructure.ReadDB(System.Data.IDataReader)">
+            <summary>
+            Read from database
+            </summary>
+            <param name="r"> Data reader</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3Connector.STS3_TagStructure.ReadIM(OutSystems.NssAmazonS3Connector.STS3_TagStructure)">
+            <summary>
+            Read from record
+            </summary>
+            <param name="r"> Record</param>
+        </member>
+    </members>
+</doc>

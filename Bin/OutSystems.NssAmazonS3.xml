@@ -1,0 +1,435 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OutSystems.NssAmazonS3</name>
+    </assembly>
+    <members>
+        <member name="M:OutSystems.NssAmazonS3.IssAmazonS3.MssListAllMyBuckets(OutSystems.NssAmazonS3.RCAuthenticationInfoRecord,OutSystems.NssAmazonS3.RLBucketRecordList@)">
+            <summary>
+            
+            </summary>
+            <param name="ssAuthInfo"></param>
+            <param name="ssBuckets"></param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.IssAmazonS3.MssListBucket(OutSystems.NssAmazonS3.RCAuthenticationInfoRecord,System.String,System.String,System.String,System.Int32,OutSystems.NssAmazonS3.RLObjectRecordList@)">
+            <summary>
+            
+            </summary>
+            <param name="ssAuthInfo"></param>
+            <param name="ssBucketName"></param>
+            <param name="ssPrefix"></param>
+            <param name="ssMarker"></param>
+            <param name="ssMaxKeys"></param>
+            <param name="ssObjects"></param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.IssAmazonS3.MssPutObject(OutSystems.NssAmazonS3.RCAuthenticationInfoRecord,System.String,System.String,System.Byte[],System.Boolean,System.Boolean,System.Boolean,OutSystems.NssAmazonS3.RLMetadataRecordList)">
+            <summary>
+            
+            </summary>
+            <param name="ssAuthInfo"></param>
+            <param name="ssBucketName"></param>
+            <param name="ssKey"></param>
+            <param name="ssData"></param>
+            <param name="ssIsPublicRead"></param>
+            <param name="ssIsPublicReadWrite"></param>
+            <param name="ssIsAuthenticatedRead"></param>
+            <param name="ssMetadata"></param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.IssAmazonS3.MssGetDownloadLink(OutSystems.NssAmazonS3.RCAuthenticationInfoRecord,System.Boolean,System.Boolean,System.String,System.String,System.String,System.Decimal,System.String@)">
+            <summary>
+            
+            </summary>
+            <param name="ssAuthInfo"></param>
+            <param name="ssIsSecure"></param>
+            <param name="ssIsAuthenticated"></param>
+            <param name="ssBucketName"></param>
+            <param name="ssKeyName"></param>
+            <param name="ssHost"></param>
+            <param name="ssExpiresIn"></param>
+            <param name="ssUrl"></param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.IssAmazonS3.MssCreateBucket(OutSystems.NssAmazonS3.RCAuthenticationInfoRecord,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="ssAuthInfo"></param>
+            <param name="ssBucketName"></param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.IssAmazonS3.MssDeleteBucket(OutSystems.NssAmazonS3.RCAuthenticationInfoRecord,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="ssAuthInfo"></param>
+            <param name="ssBucketName"></param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.IssAmazonS3.MssDeleteObject(OutSystems.NssAmazonS3.RCAuthenticationInfoRecord,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="ssAuthInfo"></param>
+            <param name="ssBucket"></param>
+            <param name="ssKey"></param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.IssAmazonS3.MssGetObjectData(OutSystems.NssAmazonS3.RCAuthenticationInfoRecord,System.String,System.String,System.Byte[]@)">
+            <summary>
+            
+            </summary>
+            <param name="ssAuthInfo"></param>
+            <param name="ssBucketName"></param>
+            <param name="ssKey"></param>
+            <param name="ssData"></param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.CssAmazonS3.MssGetObjectData(OutSystems.NssAmazonS3.RCAuthenticationInfoRecord,System.String,System.String,System.Byte[]@)">
+            <summary>
+            
+            </summary>
+            <param name="ssAuthInfo"></param>
+            <param name="ssKey"></param>
+            <param name="ssData"></param>
+        </member>
+        <member name="T:OutSystems.NssAmazonS3.RLAuthenticationInfoRecordList">
+            <summary>
+            RecordList type <code>RLAuthenticationInfoRecordList</code> that represents a record list of
+             <code>AuthenticationInfo</code>
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.RLAuthenticationInfoRecordList.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.RLAuthenticationInfoRecordList.#ctor(System.Data.IDbTransaction)">
+            <summary>
+            Constructor with transaction parameter
+            </summary>
+            <param name="trans"> IDbTransaction Parameter</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.RLAuthenticationInfoRecordList.#ctor(System.Data.IDbTransaction,OutSystems.HubEdition.RuntimePlatform.Db.OSList{OutSystems.NssAmazonS3.RCAuthenticationInfoRecord}.ReadDBMethodDelegate)">
+            <summary>
+            Constructor with transaction parameter and alternate read method
+            </summary>
+            <param name="trans"> IDbTransaction Parameter</param>
+            <param name="alternateReadDBMethod"> Alternate Read Method</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.RLAuthenticationInfoRecordList.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor declaration for serialization
+            </summary>
+            <param name="info"> SerializationInfo</param>
+            <param name="context"> StreamingContext</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.RLAuthenticationInfoRecordList.NewList">
+            <summary>
+            Create as new list
+            </summary>
+            <returns>The new record list</returns>
+        </member>
+        <member name="T:OutSystems.NssAmazonS3.RLBucketRecordList">
+            <summary>
+            RecordList type <code>RLBucketRecordList</code> that represents a record list of
+             <code>Bucket</code>
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.RLBucketRecordList.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.RLBucketRecordList.#ctor(System.Data.IDbTransaction)">
+            <summary>
+            Constructor with transaction parameter
+            </summary>
+            <param name="trans"> IDbTransaction Parameter</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.RLBucketRecordList.#ctor(System.Data.IDbTransaction,OutSystems.HubEdition.RuntimePlatform.Db.OSList{OutSystems.NssAmazonS3.RCBucketRecord}.ReadDBMethodDelegate)">
+            <summary>
+            Constructor with transaction parameter and alternate read method
+            </summary>
+            <param name="trans"> IDbTransaction Parameter</param>
+            <param name="alternateReadDBMethod"> Alternate Read Method</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.RLBucketRecordList.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor declaration for serialization
+            </summary>
+            <param name="info"> SerializationInfo</param>
+            <param name="context"> StreamingContext</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.RLBucketRecordList.NewList">
+            <summary>
+            Create as new list
+            </summary>
+            <returns>The new record list</returns>
+        </member>
+        <member name="T:OutSystems.NssAmazonS3.RLObjectRecordList">
+            <summary>
+            RecordList type <code>RLObjectRecordList</code> that represents a record list of
+             <code>Object</code>
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.RLObjectRecordList.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.RLObjectRecordList.#ctor(System.Data.IDbTransaction)">
+            <summary>
+            Constructor with transaction parameter
+            </summary>
+            <param name="trans"> IDbTransaction Parameter</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.RLObjectRecordList.#ctor(System.Data.IDbTransaction,OutSystems.HubEdition.RuntimePlatform.Db.OSList{OutSystems.NssAmazonS3.RCObjectRecord}.ReadDBMethodDelegate)">
+            <summary>
+            Constructor with transaction parameter and alternate read method
+            </summary>
+            <param name="trans"> IDbTransaction Parameter</param>
+            <param name="alternateReadDBMethod"> Alternate Read Method</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.RLObjectRecordList.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor declaration for serialization
+            </summary>
+            <param name="info"> SerializationInfo</param>
+            <param name="context"> StreamingContext</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.RLObjectRecordList.NewList">
+            <summary>
+            Create as new list
+            </summary>
+            <returns>The new record list</returns>
+        </member>
+        <member name="T:OutSystems.NssAmazonS3.RLMetadataRecordList">
+            <summary>
+            RecordList type <code>RLMetadataRecordList</code> that represents a record list of
+             <code>Metadata</code>
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.RLMetadataRecordList.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.RLMetadataRecordList.#ctor(System.Data.IDbTransaction)">
+            <summary>
+            Constructor with transaction parameter
+            </summary>
+            <param name="trans"> IDbTransaction Parameter</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.RLMetadataRecordList.#ctor(System.Data.IDbTransaction,OutSystems.HubEdition.RuntimePlatform.Db.OSList{OutSystems.NssAmazonS3.RCMetadataRecord}.ReadDBMethodDelegate)">
+            <summary>
+            Constructor with transaction parameter and alternate read method
+            </summary>
+            <param name="trans"> IDbTransaction Parameter</param>
+            <param name="alternateReadDBMethod"> Alternate Read Method</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.RLMetadataRecordList.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor declaration for serialization
+            </summary>
+            <param name="info"> SerializationInfo</param>
+            <param name="context"> StreamingContext</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.RLMetadataRecordList.NewList">
+            <summary>
+            Create as new list
+            </summary>
+            <returns>The new record list</returns>
+        </member>
+        <member name="T:OutSystems.NssAmazonS3.RCAuthenticationInfoRecord">
+            <summary>
+            Structure <code>RCAuthenticationInfoRecord</code>
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.RCAuthenticationInfoRecord.Read(System.Data.IDataReader,System.Int32@)">
+            <summary>
+            Read a record from database
+            </summary>
+            <param name="r"> Data base reader</param>
+            <param name="index"> index</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.RCAuthenticationInfoRecord.ReadDB(System.Data.IDataReader)">
+            <summary>
+            Read from database
+            </summary>
+            <param name="r"> Data reader</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.RCAuthenticationInfoRecord.ReadIM(OutSystems.NssAmazonS3.RCAuthenticationInfoRecord)">
+            <summary>
+            Read from record
+            </summary>
+            <param name="r"> Record</param>
+        </member>
+        <member name="T:OutSystems.NssAmazonS3.RCBucketRecord">
+            <summary>
+            Structure <code>RCBucketRecord</code>
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.RCBucketRecord.Read(System.Data.IDataReader,System.Int32@)">
+            <summary>
+            Read a record from database
+            </summary>
+            <param name="r"> Data base reader</param>
+            <param name="index"> index</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.RCBucketRecord.ReadDB(System.Data.IDataReader)">
+            <summary>
+            Read from database
+            </summary>
+            <param name="r"> Data reader</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.RCBucketRecord.ReadIM(OutSystems.NssAmazonS3.RCBucketRecord)">
+            <summary>
+            Read from record
+            </summary>
+            <param name="r"> Record</param>
+        </member>
+        <member name="T:OutSystems.NssAmazonS3.RCObjectRecord">
+            <summary>
+            Structure <code>RCObjectRecord</code>
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.RCObjectRecord.Read(System.Data.IDataReader,System.Int32@)">
+            <summary>
+            Read a record from database
+            </summary>
+            <param name="r"> Data base reader</param>
+            <param name="index"> index</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.RCObjectRecord.ReadDB(System.Data.IDataReader)">
+            <summary>
+            Read from database
+            </summary>
+            <param name="r"> Data reader</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.RCObjectRecord.ReadIM(OutSystems.NssAmazonS3.RCObjectRecord)">
+            <summary>
+            Read from record
+            </summary>
+            <param name="r"> Record</param>
+        </member>
+        <member name="T:OutSystems.NssAmazonS3.RCMetadataRecord">
+            <summary>
+            Structure <code>RCMetadataRecord</code>
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.RCMetadataRecord.Read(System.Data.IDataReader,System.Int32@)">
+            <summary>
+            Read a record from database
+            </summary>
+            <param name="r"> Data base reader</param>
+            <param name="index"> index</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.RCMetadataRecord.ReadDB(System.Data.IDataReader)">
+            <summary>
+            Read from database
+            </summary>
+            <param name="r"> Data reader</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.RCMetadataRecord.ReadIM(OutSystems.NssAmazonS3.RCMetadataRecord)">
+            <summary>
+            Read from record
+            </summary>
+            <param name="r"> Record</param>
+        </member>
+        <member name="T:OutSystems.NssAmazonS3.STAuthenticationInfoStructure">
+            <summary>
+            Structure <code>STAuthenticationInfoStructure</code> that represents the Service Studio structure
+             <code>AuthenticationInfo</code> <p> Description: </p>
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.STAuthenticationInfoStructure.Read(System.Data.IDataReader,System.Int32@)">
+            <summary>
+            Read a record from database
+            </summary>
+            <param name="r"> Data base reader</param>
+            <param name="index"> index</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.STAuthenticationInfoStructure.ReadDB(System.Data.IDataReader)">
+            <summary>
+            Read from database
+            </summary>
+            <param name="r"> Data reader</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.STAuthenticationInfoStructure.ReadIM(OutSystems.NssAmazonS3.STAuthenticationInfoStructure)">
+            <summary>
+            Read from record
+            </summary>
+            <param name="r"> Record</param>
+        </member>
+        <member name="T:OutSystems.NssAmazonS3.STBucketStructure">
+            <summary>
+            Structure <code>STBucketStructure</code> that represents the Service Studio structure
+             <code>Bucket</code> <p> Description: </p>
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.STBucketStructure.Read(System.Data.IDataReader,System.Int32@)">
+            <summary>
+            Read a record from database
+            </summary>
+            <param name="r"> Data base reader</param>
+            <param name="index"> index</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.STBucketStructure.ReadDB(System.Data.IDataReader)">
+            <summary>
+            Read from database
+            </summary>
+            <param name="r"> Data reader</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.STBucketStructure.ReadIM(OutSystems.NssAmazonS3.STBucketStructure)">
+            <summary>
+            Read from record
+            </summary>
+            <param name="r"> Record</param>
+        </member>
+        <member name="T:OutSystems.NssAmazonS3.STObjectStructure">
+            <summary>
+            Structure <code>STObjectStructure</code> that represents the Service Studio structure
+             <code>Object</code> <p> Description: </p>
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.STObjectStructure.Read(System.Data.IDataReader,System.Int32@)">
+            <summary>
+            Read a record from database
+            </summary>
+            <param name="r"> Data base reader</param>
+            <param name="index"> index</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.STObjectStructure.ReadDB(System.Data.IDataReader)">
+            <summary>
+            Read from database
+            </summary>
+            <param name="r"> Data reader</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.STObjectStructure.ReadIM(OutSystems.NssAmazonS3.STObjectStructure)">
+            <summary>
+            Read from record
+            </summary>
+            <param name="r"> Record</param>
+        </member>
+        <member name="T:OutSystems.NssAmazonS3.STMetadataStructure">
+            <summary>
+            Structure <code>STMetadataStructure</code> that represents the Service Studio structure
+             <code>Metadata</code> <p> Description: </p>
+            </summary>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.STMetadataStructure.Read(System.Data.IDataReader,System.Int32@)">
+            <summary>
+            Read a record from database
+            </summary>
+            <param name="r"> Data base reader</param>
+            <param name="index"> index</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.STMetadataStructure.ReadDB(System.Data.IDataReader)">
+            <summary>
+            Read from database
+            </summary>
+            <param name="r"> Data reader</param>
+        </member>
+        <member name="M:OutSystems.NssAmazonS3.STMetadataStructure.ReadIM(OutSystems.NssAmazonS3.STMetadataStructure)">
+            <summary>
+            Read from record
+            </summary>
+            <param name="r"> Record</param>
+        </member>
+    </members>
+</doc>

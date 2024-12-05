@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition="'$(Configuration)' == ''">Debug</Configuration>
+    <Platform Condition="'$(Platform)' == ''">AnyCPU</Platform>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1B7448FB-5A93-478A-B174-D25E7D0E23FE}</ProjectGuid>
+    <ApplicationIcon />
+    <AssemblyKeyContainerName />
+    <AssemblyName>OutSystems.NssGRAX_AthenaConnector</AssemblyName>
+    <AssemblyOriginatorKeyFile />
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>OutSystems.NssGRAX_AthenaConnector</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject />
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileUpgradeFlags />
+    <UpgradeBackupLocation />
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>OutSystems.NssGRAX_AthenaConnector.xml</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <IncrementalBuild>true</IncrementalBuild>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>1591;1587</NoWarn>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>OutSystems.NssGRAX_AthenaConnector.xml</DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <IncrementalBuild>false</IncrementalBuild>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>1591;1587</NoWarn>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AWSSDK.Athena, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>packages\AWSSDK.Athena.3.7.402.20\lib\net45\AWSSDK.Athena.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>packages\AWSSDK.Core.3.7.400.56\lib\net45\AWSSDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="OutSystems.HubEdition.RuntimePlatform">
+      <Name>OutSystems.HubEdition.RuntimePlatform</Name>
+      <HintPath>bin\OutSystems.HubEdition.RuntimePlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="OutSystems.RuntimeCommon">
+      <Name>OutSystems.RuntimeCommon</Name>
+      <HintPath>bin\OutSystems.RuntimeCommon.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Content Include="GRAX_AthenaConnector.csproj">
+      <SubType>Component</SubType>
+    </Content>
+    <Reference Include="System.Core">
+      <Name>System.Core</Name>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Name>System.Xml.Linq</Name>
+    </Reference>
+    <Reference Include="OutSystems.HubEdition.DatabaseAbstractionLayer">
+      <Name>OutSystems.HubEdition.DatabaseAbstractionLayer</Name>
+      <HintPath>bin\OutSystems.HubEdition.DatabaseAbstractionLayer.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="OutSystems.REST.API">
+      <Name>OutSystems.REST.API</Name>
+      <HintPath>bin\OutSystems.REST.API.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="OutSystems.SOAP.API">
+      <Name>OutSystems.SOAP.API</Name>
+      <HintPath>bin\OutSystems.SOAP.API.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GRAX_AthenaConnector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AmazonAthena\AmazonAthena.cs" />
+    <Compile Include="AmazonAthena\AmazonAthenaCredentials.cs" />
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interface.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RecordLists.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Records.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structures.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="packages\AWSSDK.Athena.3.7.402.20\analyzers\dotnet\cs\AWSSDK.Athena.CodeAnalysis.dll" />
+    <Analyzer Include="packages\AWSSDK.Athena.3.7.402.20\analyzers\dotnet\cs\SharedAnalysisCode.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent />
+    <PostBuildEvent />
+  </PropertyGroup>
+</Project>
