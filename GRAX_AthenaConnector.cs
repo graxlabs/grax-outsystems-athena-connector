@@ -10,6 +10,13 @@ using OutSystems.NssAmazonAthenaConnector;
 
 namespace OutSystems.NssGRAX_AthenaConnector
 {
+    /// <summary>
+    /// GRAX Athena Connector
+    /// 
+    /// Author: Ricardo
+    /// Year: 2024
+    /// Description: Provides methods to integrate with Amazon Athena, including functionalities for querying and managing Athena resources.
+    /// </summary>
     public class CssGRAX_AthenaConnector : IssGRAX_AthenaConnector
     {
 		/// <summary>
